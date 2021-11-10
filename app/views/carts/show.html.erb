@@ -42,7 +42,7 @@
   <div class="row">
     <div class="col-xs-12">
     <% if cart.length < 1 %>
-      <a href="/">Continue shopping</a>
+    <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
     <% else %>
       <%= form_tag orders_path do %>
         <script
