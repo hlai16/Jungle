@@ -1,7 +1,12 @@
 class Admin::ProductsController < ApplicationController
+  http_basic_authenticate_with name: ENV['ADMIN_USER'].to_s, password: ENV['ADMIN_PASSWORD'].to_s
 
   def index
     @products = Product.order(id: :desc).all
+  end
+
+  def edit
+    render plain: "I'm only accessible if you know the password"
   end
 
   def new
@@ -38,3 +43,4 @@ class Admin::ProductsController < ApplicationController
   end
 
 end
+
