@@ -20,25 +20,25 @@ RSpec.describe Product, type: :model do
       expect(subject).to be_valid
       expect(subject.errors.full_messages).to be_empty
     end
-    it 'it should be invalid if name is blank' do
+    it 'should be invalid if name is blank' do
       @product = subject 
       @product.name = nil 
       expect(@product).to_not be_valid
       expect(@product.errors.full_messages).to include "Name can't be blank"
     end
-    it 'it should be invalid if price is blank' do
+    it 'should be invalid if price is blank' do
       @product = subject 
       @product.price_cents = nil 
       expect(@product).to_not be_valid
       expect(@product.errors.full_messages).to include "Price can't be blank"
     end
-    it 'it should be invalid if quantity is blank' do
+    it 'should be invalid if quantity is blank' do
       @product = subject 
       @product.quantity = nil 
       expect(@product).to_not be_valid
       expect(@product.errors.full_messages).to include "Quantity can't be blank"
     end
-    it 'it should be invalid if category is blank' do
+    it 'should be invalid if category is blank' do
       @product = subject 
       @product.category = nil 
       expect(@product).to_not be_valid
